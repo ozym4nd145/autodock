@@ -19,8 +19,8 @@
         <p class="lead">A minimalistic dockerfile generator</p>
       </div>
       <div class="row">
-        <div class="col" id="left_pane">
-          <form id="dockinput" onsubmit="return false;">
+        <div class="col container" id="left_pane">
+          <form class="container rounded" id="dockinput" onsubmit="return false;">
             <label for="base">Base</label>
             <input class="form-control" type="text" name="base" id="base"
             placeholder="ubuntu:14.04">
@@ -45,6 +45,7 @@
             <label for="params">Parameters</label>
             <input class="form-control" type="text" name="params" id="params"
             placeholder="--log --help">
+            <br>
             <button class="form-control btn btn-primary" type="submit"
                                          onclick="autodock_compile();">Generate</button>
           </form>
