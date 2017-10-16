@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>
+      AutoDock
+    </title>
+  </head>
+  <body>
+    <h1> Auto Dock </h1>
+    <h3> Auto dockerfile generator </h3>
+    <form id="dockinput" onsubmit="return false;">
+      Base: <br>
+      <input type="text" name="base" id="base"><br>
+      Maintainer: <br>
+      <input type="text" name="maintainer" id="maintainer"><br>
+      Ports(comma separated): <br>
+      <input type="text" name="ports" id="ports"><br>
+      Commands: <br>
+      <input type="text" name="commands" id="commands"><br>
+      Environment variables: <br>
+      <input type="text" name="env" id="env"><br>
+      Word dir: <br>
+      <input type="text" name="workdir" id="workdir"><br>
+      Entrypoint: <br>
+      <input type="text" name="entry" id="entry"><br>
+      Parameters: <br>
+      <input type="text" name="params" id="params"><br>
+      <input type="submit" onclick="autodock_compile();">
+    </form>
+    <textarea id="output">
+    </textarea>
+    <script src="compile.js"></script>
+  </body>
+</html>
