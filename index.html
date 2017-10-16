@@ -1,33 +1,60 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
       AutoDock
     </title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <h1> Auto Dock </h1>
-    <h3> Auto dockerfile generator </h3>
-    <form id="dockinput" onsubmit="return false;">
-      Base: <br>
-      <input type="text" name="base" id="base"><br>
-      Maintainer: <br>
-      <input type="text" name="maintainer" id="maintainer"><br>
-      Ports(comma separated): <br>
-      <input type="text" name="ports" id="ports"><br>
-      Commands: <br>
-      <input type="text" name="commands" id="commands"><br>
-      Environment variables: <br>
-      <input type="text" name="env" id="env"><br>
-      Word dir: <br>
-      <input type="text" name="workdir" id="workdir"><br>
-      Entrypoint: <br>
-      <input type="text" name="entry" id="entry"><br>
-      Parameters: <br>
-      <input type="text" name="params" id="params"><br>
-      <input type="submit" onclick="autodock_compile();">
-    </form>
-    <textarea id="output">
-    </textarea>
+    <div class="container-fluid">
+      <div class="jumbotron" id="top">
+        <h1 class="display-3"> Auto Dock </h1>
+        <p class="lead">A minimalistic dockerfile generator</p>
+      </div>
+      <div class="row">
+        <div class="col" id="left_pane">
+          <form id="dockinput" onsubmit="return false;">
+            <label for="base">Base</label>
+            <input class="form-control" type="text" name="base" id="base"
+            placeholder="ubuntu:14.04">
+            <label for="maintainer">Maintainer</label>
+            <input class="form-control" type="text" name="maintainer"
+            id="maintainer" placeholder="Suyash Agrawal (ozym4nd145@outlook.com)">
+            <label for="ports">Ports(comma separated)</label>
+            <input class="form-control" type="text" name="ports" id="ports"
+            placeholder="4356,7890">
+            <label for="commands">Commands</label>
+            <input class="form-control" type="text" name="commands"
+            id="commands" placeholder="apt-get -yqq update && apt-get install wget && wget http://www.google.com">
+            <label for="env">Environment variables</label>
+            <input class="form-control" type="text" name="env" id="env"
+            placeholder="foo=bar biz=bam">
+            <label for="workdir">Word dir</label>
+            <input class="form-control" type="text" name="workdir"
+            id="workdir" placeholder="/opt/app">
+            <label for="entry">Entrypoint</label>
+            <input class="form-control" type="text" name="entry" id="entry"
+            placeholder="bash get_server.sh">
+            <label for="params">Parameters</label>
+            <input class="form-control" type="text" name="params" id="params"
+            placeholder="--log --help">
+            <button class="form-control btn btn-primary" type="submit"
+                                         onclick="autodock_compile();">Generate</button>
+          </form>
+        </div>
+        <div class="col" id="right_pane">
+          <textarea class="form-control border border-primary" style="min-width: 100%;
+            min-height: 100%;" id="output"></textarea>
+        </div>
+      </div>
+    </div>
     <script src="compile.js"></script>
   </body>
 </html>
